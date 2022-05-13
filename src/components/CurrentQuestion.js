@@ -7,7 +7,6 @@ import { Button } from './Button';
 import { quiz } from 'reducers/quiz';
 import Timer from './Timer';
 
-// */ eslint-disable */
 
 export const CurrentQuestion = () => {
 	const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
@@ -115,33 +114,4 @@ export const CurrentQuestion = () => {
 		</div>
 	);
 };
-
-
-///// Commented out code, different tested approaches for the timer,
-///// left here for possible later use (will clean up at some point):
-
-	// const [second, setSecond] =useState(0)
-	// const [timer] = Timer(10)
-
-	// useEffect(() => {
-	// 	if (timer <= 0) {
-	// 		dispatch(quiz.actions.goToNextQuestion())
-	// 	} 
-	// }, [timer, dispatch])
-
-	// const countDown = setInterval(() => {
-	// 	if (second === 0) {
-	// 		setSecond((second) => second + 1);
-	// 	}
-	// }, 1000)
-
-	// const stopCountDown = () => {
-	// 	clearInterval(countDown)
-	// }
-
-	// const clickFinish = () => {
-	// 	stopCountDown()
-	// 	dispatch(quiz.actions.addTime({ amountOfSeconds: second }))
-	// 	dispatch(quiz.actions.goToNextQuestion());
-	// }
 
